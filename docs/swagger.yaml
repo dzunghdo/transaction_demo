@@ -1,0 +1,101 @@
+definitions:
+  apperr.AppError:
+    properties:
+      code:
+        type: string
+      message:
+        type: string
+      status:
+        type: integer
+    type: object
+  dto.AccountDTO:
+    properties:
+      account_id:
+        type: integer
+      balance:
+        type: number
+    required:
+    - account_id
+    - balance
+    type: object
+info:
+  contact: {}
+paths:
+  /accounts:
+    post:
+      consumes:
+      - application/json
+      description: Create a new account with the provided details.
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/apperr.AppError'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/apperr.AppError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/apperr.AppError'
+      summary: Create a new account
+      tags:
+      - Account
+  /accounts/{account_id}:
+    get:
+      consumes:
+      - application/json
+      description: Retrieve the balance of an account by its ID.
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/dto.AccountDTO'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/apperr.AppError'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/apperr.AppError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/apperr.AppError'
+      summary: Get Account Balance
+      tags:
+      - Account
+  /transaction:
+    post:
+      consumes:
+      - application/json
+      description: Perform a transaction on an account, updating its balance.
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/apperr.AppError'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/apperr.AppError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/apperr.AppError'
+      summary: Make a transaction
+      tags:
+      - Transaction
+swagger: "2.0"

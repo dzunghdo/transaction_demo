@@ -1,0 +1,13 @@
+app_name: Example Application
+env: APP_ENV
+server:
+  port: 10000
+postgres:
+  connection_string:
+  host: localhost
+  user: postgres
+  password: root123
+  db: example_db
+  port: 15432
+  max_open_conns: 10
+  max_idle_conns: 5

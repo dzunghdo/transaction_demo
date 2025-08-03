@@ -1,0 +1,21 @@
+services:
+  postgres:
+    networks:
+      - transaction_demo
+    image: postgres:15
+    volumes:
+      - postgres_demo:/var/lib/postgresql/data
+    ports:
+      - 15432:5432
+    environment:
+      POSTGRES_PASSWORD: root123
+      POSTGRES_USER: postgres
+      POSTGRES_DB: example_db
+
+volumes:
+  postgres_demo:
+    driver: local
+
+networks:
+  transaction_demo:
+    driver: bridge
