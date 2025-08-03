@@ -17,7 +17,7 @@ Before setting up the project, ensure you have the following installed:
 
 ```bash
 # Clone the repository
-git clone <repository-url>
+git clone git@github.com:dzunghdo/transaction_demo.git
 cd transaction_demo
 
 # Download and vendor dependencies
