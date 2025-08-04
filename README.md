@@ -1,6 +1,6 @@
 # Transaction Demo
 
-A Go-based transaction management demonstration application built with Gin web framework, GORM ORM, and PostgreSQL database. This project demonstrates transaction handling patterns using the go-transaction-manager library.
+A Go-based account management demo application built with Gin web framework, GORM ORM, and PostgreSQL database.
 
 ## Prerequisites
 
@@ -77,7 +77,7 @@ The application will start on `http://localhost:10000`
 ## Configuration
 
 The application uses environment-based configuration files located in `app/config/env/`. 
-Different configuration files can be used for different environments (e.g., `local.yaml`, `staging.yaml`, `production.yaml`).
+Different configuration files can be used for different environments (e.g., `local.yaml`, `develop.yaml`, `stg.yaml`, `prod.yaml`).
 You can set the `APP_ENV` environment variable to specify which configuration file to use.
 
 ## Database Setup
